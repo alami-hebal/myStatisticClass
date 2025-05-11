@@ -1,0 +1,1757 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>my Classroom Dashboard</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="css/simplebar.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="css/feather.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme" disabled>
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme">
+  </head>
+  
+  <body class="vertical  dark  ">
+    <div class="wrapper">
+      <nav class="topnav navbar navbar-light">
+        <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+          <i class="fe fe-menu navbar-toggler-icon"></i>
+        </button>
+        <form class="form-inline mr-auto searchform text-muted">
+          <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search" placeholder="Search..." aria-label="Search">
+        </form>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="dark">
+              <i class="fe fe-sun fe-16"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+              <span class="fe fe-grid fe-16"></span>
+            </a>
+          </li>
+          <li class="nav-item nav-notif">
+            <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-notif">
+              <span class="fe fe-bell fe-16"></span>
+              <span class="dot dot-md bg-success"></span>
+            </a>
+          </li>
+               <span class="avatar avatar-sm mt-2">
+                <img src="./images/logo1.png" alt="..." class="avatar-img rounded-circle">
+              </span>
+         </ul>
+      </nav>
+      
+
+
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./dash.html">
+              <span>
+                <img src="./images/logo.png">
+              </span>
+            </a>
+          </div>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-home fe-16"></i>
+                <span class="ml-3 item-text">Dashboard</span><span class="sr-only">(current)</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+                <li class="nav-item active">
+                  <a class="nav-link pl-3" href="./dash.html"><span class="ml-1 item-text">Main Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics Dashboard</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Components</span>
+          </p>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-grid fe-16"></i>
+                <span class="ml-3 item-text">Tables</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="tables">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">Data Tables</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#charts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-pie-chart fe-16"></i>
+                <span class="ml-3 item-text">Charts</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="charts">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./chart-chartjs.html"><span class="ml-1 item-text">Charts</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./chart-apexcharts.html"><span class="ml-1 item-text">Web Analytic Charts</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./datamaps.html"><span class="ml-1 item-text">Data maps</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p class="text-muted nav-heading mt-4 mb-1">
+            <span>Apps</span>
+          </p>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="calendar.html">
+                <i class="fe fe-calendar fe-16"></i>
+                <span class="ml-3 item-text">Calendar</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+
+      <main role="main" class="main-content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <h2 class="mb-2 page-title">Data table</h2>
+              <p class="card-text">Student Data Tables content Student of Mathematical Statistic program in online education mode at School Of Distance Education, University Science Malaysia.</p>
+              <div class="row my-4">
+                <!-- Small table -->
+                <div class="col-md-12">
+                  <div class="card shadow">
+                    <div class="card-body">
+
+
+
+                      <!-- table -->
+<table class="table datatables" id="dataTable-1">
+  <thead>
+    <tr>
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Faculty</th>
+      <th>Course</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>306</td>
+        <td>Ronald Shields</td>
+        <td>(160)326-3301x802</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>scottcrawford@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>365</td>
+        <td>Monica Howard</td>
+        <td>4997412352</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>gcalderon@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>382</td>
+        <td>Alyssa Ramirez</td>
+        <td>485-895-3939x89494</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>riverarebecca@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>334</td>
+        <td>Robert Holland</td>
+        <td>(044)007-8461x424</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>kimberly61@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>311</td>
+        <td>Sylvia Mercer</td>
+        <td>2957011183</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>corywise@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>362</td>
+        <td>Mr. Victor Townsend</td>
+        <td>037.032.2257x0447</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>wwarner@briggs.net</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>357</td>
+        <td>Natalie Jones</td>
+        <td>(462)182-6493</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>adkinskaren@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>384</td>
+        <td>Matthew Martin</td>
+        <td>515-147-9449x33727</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>vwalker@gibbs.org</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>328</td>
+        <td>Darlene Schmidt</td>
+        <td>1390163198</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>shelleygriffin@hopkins.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>385</td>
+        <td>Cynthia Wood</td>
+        <td>+1-343-740-7786x104</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>rsmith@davis.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>336</td>
+        <td>Antonio Diaz</td>
+        <td>+1-623-148-8180</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>hobbschristopher@rodriguez-munoz.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>346</td>
+        <td>Eric Campbell</td>
+        <td>154-162-3173</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>ejacobs@jensen-page.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>397</td>
+        <td>Cassidy Murillo</td>
+        <td>(131)907-3442</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>ramirezkatie@armstrong.net</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>393</td>
+        <td>Craig Shaw</td>
+        <td>894-675-0797x56226</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>smithwilliam@woodard-vargas.org</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>340</td>
+        <td>Frank Trevino</td>
+        <td>644-166-7057</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>daniel96@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>339</td>
+        <td>Kelly Bell</td>
+        <td>(967)156-8335</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>megan70@gmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>342</td>
+        <td>Melissa Smith</td>
+        <td>1397776433</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>taylorjacqueline@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>370</td>
+        <td>Richard Washington</td>
+        <td>(583)405-8274x685</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>duranjohn@crane-haas.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>360</td>
+        <td>Oscar Brooks</td>
+        <td>001-302-051-3614x249</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>kknapp@sheppard.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>381</td>
+        <td>Alexandra Cooper</td>
+        <td>(146)904-6270</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>nelsonnatalie@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>367</td>
+        <td>Lucas Underwood</td>
+        <td>+1-038-136-6973x959</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>smithrobin@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>339</td>
+        <td>Charlotte Meyer</td>
+        <td>(823)574-7717</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>sburton@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>337</td>
+        <td>Richard Pham</td>
+        <td>446.332.9333x519</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>joanna55@knight-medina.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>346</td>
+        <td>Kevin Vincent</td>
+        <td>001-084-596-4150x6601</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>wcastillo@smith-gomez.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>318</td>
+        <td>Thomas Reilly</td>
+        <td>296-186-5168x4800</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>virginiashepard@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>330</td>
+        <td>James Hood</td>
+        <td>001-229-309-0807</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>morrowjoseph@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>316</td>
+        <td>Christopher Williams</td>
+        <td>345.337.1192</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>garciakatie@smith.info</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>333</td>
+        <td>Eric Brooks</td>
+        <td>001-463-630-5836x741</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>darlene52@hunter.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>392</td>
+        <td>Sarah Gray</td>
+        <td>+1-700-339-9993x68071</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>qgraham@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>351</td>
+        <td>Laurie Vega</td>
+        <td>886-554-0343</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>johnwilliams@beasley.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>365</td>
+        <td>Monica Howard</td>
+        <td>4997412352</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>gcalderon@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>382</td>
+        <td>Alyssa Ramirez</td>
+        <td>485-895-3939x89494</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>riverarebecca@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>334</td>
+        <td>Robert Holland</td>
+        <td>(044)007-8461x424</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>kimberly61@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>311</td>
+        <td>Sylvia Mercer</td>
+        <td>2957011183</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>corywise@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>362</td>
+        <td>Mr. Victor Townsend</td>
+        <td>037.032.2257x0447</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>wwarner@briggs.net</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>357</td>
+        <td>Natalie Jones</td>
+        <td>(462)182-6493</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>adkinskaren@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>384</td>
+        <td>Matthew Martin</td>
+        <td>515-147-9449x33727</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>vwalker@gibbs.org</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>328</td>
+        <td>Darlene Schmidt</td>
+        <td>1390163198</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>shelleygriffin@hopkins.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>385</td>
+        <td>Cynthia Wood</td>
+        <td>+1-343-740-7786x104</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>rsmith@davis.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>336</td>
+        <td>Antonio Diaz</td>
+        <td>+1-623-148-8180</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>hobbschristopher@rodriguez-munoz.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>346</td>
+        <td>Eric Campbell</td>
+        <td>154-162-3173</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>ejacobs@jensen-page.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>397</td>
+        <td>Cassidy Murillo</td>
+        <td>(131)907-3442</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>ramirezkatie@armstrong.net</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>393</td>
+        <td>Craig Shaw</td>
+        <td>894-675-0797x56226</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>smithwilliam@woodard-vargas.org</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>340</td>
+        <td>Frank Trevino</td>
+        <td>644-166-7057</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>daniel96@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>339</td>
+        <td>Kelly Bell</td>
+        <td>(967)156-8335</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>megan70@gmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>342</td>
+        <td>Melissa Smith</td>
+        <td>1397776433</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>taylorjacqueline@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>370</td>
+        <td>Richard Washington</td>
+        <td>(583)405-8274x685</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>duranjohn@crane-haas.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>360</td>
+        <td>Oscar Brooks</td>
+        <td>001-302-051-3614x249</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>kknapp@sheppard.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>381</td>
+        <td>Alexandra Cooper</td>
+        <td>(146)904-6270</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>nelsonnatalie@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>367</td>
+        <td>Lucas Underwood</td>
+        <td>+1-038-136-6973x959</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>smithrobin@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>339</td>
+        <td>Charlotte Meyer</td>
+        <td>(823)574-7717</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>sburton@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>337</td>
+        <td>Richard Pham</td>
+        <td>446.332.9333x519</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>joanna55@knight-medina.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>346</td>
+        <td>Kevin Vincent</td>
+        <td>001-084-596-4150x6601</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>wcastillo@smith-gomez.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>318</td>
+        <td>Thomas Reilly</td>
+        <td>296-186-5168x4800</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>virginiashepard@hotmail.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>330</td>
+        <td>James Hood</td>
+        <td>001-229-309-0807</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>morrowjoseph@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>316</td>
+        <td>Christopher Williams</td>
+        <td>345.337.1192</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>garciakatie@smith.info</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>333</td>
+        <td>Eric Brooks</td>
+        <td>001-463-630-5836x741</td>
+        <td>Statistics</td>
+        <td>Mathematical Statistics</td>
+        <td>darlene52@hunter.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>392</td>
+        <td>Sarah Gray</td>
+        <td>+1-700-339-9993x68071</td>
+        <td>Mathematics</td>
+        <td>Mathematical Statistics</td>
+        <td>qgraham@yahoo.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <label class="custom-control-label"></label>
+          </div>
+        </td>
+        <td>351</td>
+        <td>Laurie Vega</td>
+        <td>886-554-0343</td>
+        <td>Data Science</td>
+        <td>Mathematical Statistics</td>
+        <td>johnwilliams@beasley.com</td>
+        <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="text-muted sr-only">Action</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Edit</a>
+            <a class="dropdown-item" href="#">Remove</a>
+            <a class="dropdown-item" href="#">Assign</a>
+          </div>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+                    </div>
+                  </div>
+                </div> <!-- simple table -->
+              </div> <!-- end section -->
+            </div> <!-- .col-12 -->
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+
+        <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">Notifications For Users</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="list-group list-group-flush my-n3">
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-box fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Do not modify the dashboard layout or settings.</strong></small>
+                        <div class="my-0 text-muted small">All configurations are finalized by the admin only.</div>
+                        <small class="badge badge-pill badge-light text-muted">1 month ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-download fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Sharing the dashboard or its link outside the organization is strictly prohibited.</strong></small>
+                        <div class="my-0 text-muted small">Please dont download, copy, print or share.</div>
+                        <small class="badge badge-pill badge-light text-muted">1 month ago</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-inbox fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>Unauthorized changes to widgets, pages, or menus are not allowed and may be reverted. </strong></small>
+                        <div class="my-0 text-muted small">Please dont make any changes.</div>
+                        <small class="badge badge-pill badge-light text-muted">1 month ago</small>
+                      </div>
+                    </div> <!-- / .row -->
+                  </div>
+                  <div class="list-group-item bg-transparent">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <span class="fe fe-link fe-24"></span>
+                      </div>
+                      <div class="col">
+                        <small><strong>This dashboard is for internal use only. </strong></small>
+                        <div class="my-0 text-muted small">Please keep access confidential.</div>
+                        <small class="badge badge-pill badge-light text-muted">1 month ago</small>
+                      </div>
+                    </div>
+                  </div> <!-- / .row -->
+                </div> <!-- / .list-group -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">Shortcuts</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body px-5">
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-success justify-content-center">
+                    <i class="fe fe-cpu fe-32 align-self-center text-white"></i>  
+                   </div>
+                    <a href="main/index.html">Home</a>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                    </div>
+                    <a href="main/news-list.html">Teaching Material</a>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-droplet fe-32 align-self-center text-white"></i>
+                    </div>
+                    <a href="main/news-grid.html">Assignment List</a>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-upload-cloud fe-32 align-self-center text-white"></i>
+                    </div>
+                    <a href="main/project.html">Video Lesson</a>
+                  </div>
+                </div>
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                    </div>
+                    <a href="main/about.html">About</a>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-settings fe-32 align-self-center text-white"></i>
+                    </div>
+                    <a href="main/contact.html">Contact</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main> <!-- main -->
+    </div> <!-- .wrapper -->
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src='js/daterangepicker.js'></script>
+    <script src='js/jquery.stickOnScroll.js'></script>
+    <script src="js/tinycolor-min.js"></script>
+    <script src="js/config.js"></script>
+    <script src='js/jquery.dataTables.min.js'></script>
+    <script src='js/dataTables.bootstrap4.min.js'></script>
+    <script>
+      $('#dataTable-1').DataTable(
+      {
+        autoWidth: true,
+        "lengthMenu": [
+          [16, 32, 64, -1],
+          [16, 32, 64, "All"]
+        ]
+      });
+    </script>
+    <script src="js/apps.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+  </body>
+</html>
